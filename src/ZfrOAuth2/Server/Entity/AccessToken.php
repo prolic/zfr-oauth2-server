@@ -29,6 +29,18 @@ class AccessToken extends AbstractToken
     /**
      * {@inheritDoc}
      */
+    public function getExpiresIn()
+    {
+        if (null === $this->expiresAt) {
+            return PHP_INT_MAX;
+        }
+
+        return parent::getExpiresIn();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function isExpired()
     {
         return parent::isExpired() && $this->expiresAt !== null;

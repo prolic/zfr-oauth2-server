@@ -103,4 +103,10 @@ class AccessTokenTest extends \PHPUnit_Framework_TestCase
         $accessToken = new AccessToken();
         $this->assertFalse($accessToken->isExpired());
     }
+
+    public function testExpiresInForTokenThatDoNotExpire()
+    {
+        $accessToken = new AccessToken();
+        $this->assertEquals(PHP_INT_MAX, $accessToken->getExpiresIn());
+    }
 }
