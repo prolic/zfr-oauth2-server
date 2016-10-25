@@ -32,7 +32,7 @@ trait AuthorizationServerAwareTrait
     private $authorizationServer;
 
     /**
-     * {@inheritDoc}
+     * Sets an AuthorizationServerInterface
      */
     public function setAuthorizationServer(AuthorizationServerInterface $authorizationServer)
     {
