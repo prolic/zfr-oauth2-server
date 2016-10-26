@@ -30,10 +30,10 @@ class AuthorizationServerAwareTraitTest extends \PHPUnit_Framework_TestCase
 {
     public function testSetAuthorizationServer()
     {
-        $mock = $this->getMockForTrait(AuthorizationServerAwareTrait::class);
-
         $authorizationServer = $this->createMock(AuthorizationServerInterface::class);
-        $mock->expects($this->any())
+
+        $mock = $this->getMockForTrait(AuthorizationServerAwareTrait::class, [], '', true, true, true, ['setAuthorizationServer']);
+        $mock->expects($this->once())
             ->method('setAuthorizationServer')
             ->with($authorizationServer);
 
