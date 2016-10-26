@@ -34,9 +34,6 @@ trait AuthorizationServerAwareTrait
      */
     private $authorizationServer;
 
-    /**
-     * Sets an AuthorizationServerInterface
-     */
     public function setAuthorizationServer(AuthorizationServerInterface $authorizationServer)
     {
         $this->authorizationServer = $authorizationServer;
